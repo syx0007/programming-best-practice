@@ -5,7 +5,7 @@
 # 分析
 
 - [需求分析](./analyse/requirement_analysis.md)
-- [成本分析](./analyse/requirement_analysis.md)
+- [成本分析](./analyse/cost_analysis.md)
 
 # 设计
 
