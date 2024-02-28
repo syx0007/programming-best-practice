@@ -1,0 +1,20 @@
+[book]
+authors = ["lony2003", "kongqingxia", "DymaticPro", "neuschcb"]
+language = "zh_CN"
+multilingual = false
+src = "src"
+title = "软件开发最佳实践"
+
+[output.html]
+git-repository-url = "https://github.com/neuschcb/programming-best-practice"
+edit-url-template = "https://github.com/neuschcb/programming-best-practice/edit/main/{path}"
+site-url = "/programming-best-practice/"
+
+[output.html.search]
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 2
