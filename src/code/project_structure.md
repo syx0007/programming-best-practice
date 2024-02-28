@@ -1,1 +1,9 @@
 # 项目结构
+
+  项目结构是本项目二阶段接手后最大的问题。结构不清晰，命名模糊，过度分包等问题在本项目第一阶段代码中得到了充分的体现。项目结构本应该是设计阶段就确定好的，但编码习惯有可能将设计完善的代码结构变得再次混乱。在二阶段的开发过程中，我们遵循了如下的开发规范：
+
+* Controller层不包含任何业务逻辑，只作为Service层代码的wrapper使用，具体业务逻辑均在Service层中实现。
+* Service层分为两层，ControllerService和Service，ControllerService调用Service，通常一个ControllerService可以调用多个Service，Controller调用ControllerService，通常一个Controller只能调用一个ControllerService。
+* Service层所有基础类均为接口，另有单独的Impl类做具体实现（Impl类注册时注册为接口名称）
+
+  我们强烈建议在新项目开发时也遵循上述的规则，既方便替换，也方便生成假数据。

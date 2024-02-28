@@ -25,7 +25,15 @@ ___请注意：本文中并不会或只会有限的的包含对某些名词的�
 
 每个部分都有一个或几个子项，基本涵盖了软件开发的全过程，谨供各位参考。
 
-# Copyright
+## 实例简介
+
+本文的实例为本团队开发的该项目，在以后的文章中均以本项目指代。
+
+本项目是实现一个使用大数据相关技术对某人进行分析的软件，从形式上是某单位某部门的现有业务流程的`enhancement`。本项目使用了Springboot， Mybatis-plus， SpringData JPA，SpringData Neo4j，ActiveMQ ，Spark，Redis，OpenResty没有使用日志框架。
+
+本项目分为五个部分：前端，后端，图数据库及相关后端，算法微服务以及网关
+
+## Copyright
 
 本文档的初版笔者是参与了软件开发的lony2003，kongqingxia，以及DymaticPro（TODO：问他Github昵称）编写，其他的贡献者请参考本文的Github页面。
 

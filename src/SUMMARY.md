@@ -4,13 +4,15 @@
 
 # 分析
 
-- [需求分析流程](./analyse/requirement_analysis.md)
+- [需求分析](./analyse/requirement_analysis.md)
+- [成本分析](./analyse/requirement_analysis.md)
 
 # 设计
 
 - [UI设计](./design/ui_design.md)
 - [API设计](./design/api_design.md)
 - [微服务设计](./design/micro_design.md)
+- [安全性设计](./design/secure.md)
 - [选型](./design/choice.md)
 
 # 编码
@@ -21,6 +23,14 @@
 
 # 测试
 
+- [测试](./testing/index.md)
+
 # 部署
 
+- [单机部署](./deploy/single.md)
+- [容器部署](./deploy/container.md)
+
 # 杂项
+
+- [关于内网开发](./others/no_internet_programming.md)
+- [关于持续集成](./others/continuous-integration.md)
