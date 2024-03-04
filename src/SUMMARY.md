@@ -20,6 +20,7 @@
 - [项目结构](./code/project_structure.md)
 - [封装](./code/encapsulation.md)
 - [拦截](./code/intercept.md)
+- [屏幕分辨率适配](./code/resolution.md)
 
 # 测试
 
