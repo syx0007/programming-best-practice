@@ -1,0 +1,64 @@
+name: Generate Directory Tree
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+  workflow_dispatch:
+
+jobs:
+  generate-tree:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 必需权限
+    steps:
+      - uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Generate directory tree
+        run: |
+          python scripts/generate_directory_tree.py
+          
+      - name: Commit file via GitHub API
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            try {
+              // 读取生成的文件内容
+              const content = fs.readFileSync('src/SUMMARY.md', 'utf8');
+              
+              // 检查文件是否存在（获取sha值用于更新）
+              let sha = null;
+              try {
+                const response = await github.rest.repos.getContent({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  path: 'src/SUMMARY.md',
+                  ref: 'main'
+                });
+                sha = response.data.sha;
+              } catch (error) {
+                if (error.status !== 404) throw error;
+              }
+              
+              // 创建或更新文件
+              await github.rest.repos.createOrUpdateFileContents({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                path: 'src/SUMMARY.md',
+                message: 'Auto-update directory tree',
+                content: Buffer.from(content).toString('base64'),
+                sha: sha,
+                branch: 'main'
+              });
+              
+              console.log('File successfully updated');
+            } catch (error) {
+              core.setFailed(`Action failed: ${error}`);
+            }
