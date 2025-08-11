@@ -2,7 +2,7 @@
 import os
 from pathlib import Path
 
-def generate_directory_tree(root_dir="src", output_file="SUMMARY.md"):
+def generate_directory_tree(root_dir="src", output_file="src/SUMMARY.md"):
     """
     递归生成带路径的目录树结构并保存为Markdown文件
     
